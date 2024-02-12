@@ -1,0 +1,62 @@
+@use "base" as *;
+
+.contact {
+  margin-top: $layout-section-spacing;
+
+  &__background-img {
+    background-image: url("/src/images/contact/ContactBackground.png");
+    background-size: cover;
+    background-position: center;
+    padding: $layout-section-spacing 0;
+  }
+
+  &__inner-wrap {
+    max-width: $max-container-width;
+    padding-inline: $default-horizontal-container-padding;
+    margin: 0 auto;
+  }
+
+  &__upper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-white;
+    padding-bottom: $layout-section-spacing;
+    border-bottom: 0.25px solid $color-white;
+
+    &-left-container {
+      max-width: 400px;
+    }
+
+    &-title {
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    &-subtitle {
+      font-size: 40px;
+    }
+
+    &-btn {
+      font-size: 17px;
+      font-weight: 500;
+      padding: 15px 20px;
+      align-self: flex-start;
+
+      & > span {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__lower {
+    padding-top: $layout-section-spacing;
+
+    color: $color-white;
+    & > p {
+      max-width: 50ch;
+    }
+  }
+}

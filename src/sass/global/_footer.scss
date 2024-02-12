@@ -1,0 +1,42 @@
+@use "base" as *;
+
+.footer {
+  background-color: $color-dark-gray;
+  color: $color-white;
+  font-weight: 400;
+
+  &__inner-wrap {
+    max-width: $max-container-width;
+    margin: 0 auto;
+    padding-top: $layout-section-spacing;
+    padding-inline: $default-horizontal-container-padding;
+  }
+
+  &__upper {
+    padding-bottom: $layout-section-spacing;
+    border-bottom: 0.25px solid $color-light-gray;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+
+    &-title {
+      color: $color-light-gray;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    &-content {
+      margin: 0;
+    }
+  }
+
+  &__lower {
+    padding: 25px 0;
+
+    & > p {
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+}

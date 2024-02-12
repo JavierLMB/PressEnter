@@ -1,0 +1,129 @@
+@use "base" as *;
+
+.approach {
+  background-color: $color-off-white;
+  padding-bottom: $layout-section-spacing;
+
+  &__inner-wrap {
+    max-width: $max-container-width;
+    margin: 0 auto;
+    padding-inline: $default-horizontal-container-padding;
+  }
+
+  &__features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__team {
+    display: flex;
+    gap: 105px;
+    gap: clamp(20px, 5vw, 105px);
+    margin-top: $layout-section-spacing;
+
+    @media (width < $bp-normal) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.feature {
+  &__card {
+    flex: 1;
+    color: $color-white;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    height: 510px;
+    min-width: 300px;
+
+    @media (width < $bp-large) {
+      height: 400px;
+    }
+
+    @media (width < $bp-small) {
+      min-width: 250px;
+    }
+
+    &-image {
+      height: 100%;
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+      border-radius: $default-border-radius;
+      background-size: cover;
+      background-position: center;
+      transition: scale 0.3s ease-in-out;
+
+      @media (width < $bp-small) {
+        padding: 20px;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    &-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &-subtitle {
+      font-size: 30px;
+    }
+
+    &-content {
+      font-size: 13px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  &--1-bg {
+    background-image: url("/src/images/approach-features/ApproachOrganisationBackground.png");
+  }
+
+  &--2-bg {
+    background-image: url("/src/images/approach-features/ApproachExpertiseBackground.png");
+  }
+
+  &--3-bg {
+    background-image: url("/src/images/approach-features/ApproachCultureBackground.png");
+  }
+}
+
+.team {
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $default-border-radius;
+
+    @media ($bp-normal < width < $bp-large) {
+      height: 60vw;
+      width: 60%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto 0;
+    font-weight: 400;
+
+    &-title {
+      font-size: 26px;
+      font-weight: 500;
+    }
+  }
+}
