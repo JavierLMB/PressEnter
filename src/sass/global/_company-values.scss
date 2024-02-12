@@ -37,6 +37,10 @@
       @media (width < $bp-normal) {
         height: 250px;
       }
+
+      @media (width < $bp-small) {
+        height: 50vw;
+      }
     }
   }
 

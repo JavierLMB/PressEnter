@@ -52,6 +52,14 @@
         font-size: 40px;
         font-weight: 500;
       }
+
+      @media (width < $bp-smaller) {
+        font-size: 30px;
+
+        & + span {
+          font-size: 30px;
+        }
+      }
     }
 
     &-title {
