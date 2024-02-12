@@ -6,21 +6,27 @@ function currentDatePopup() {
 
   // Formatted the date and time exactly as shown on the PDF 15:3 / 4th March 2024
 
-  const currentDate = new Date();
+  const generateDate = () => {
+    const currentDate = new Date();
 
-  popupContent.innerHTML = `${currentDate
-    .toLocaleTimeString("en-GB")
-    .slice(0, 5)} / ${currentDate.getDate()}th ${currentDate.toLocaleDateString(
-    "en-GB",
-    { month: "long" }
-  )} ${currentDate.getFullYear()}`;
-
-  closeBtn.addEventListener("click", () => {
-    popup.classList.remove("company-values__popup--active");
-  });
+    popupContent.innerHTML = `${currentDate
+      .toLocaleTimeString("en-GB")
+      .slice(
+        0,
+        5
+      )} / ${currentDate.getDate()}th ${currentDate.toLocaleDateString(
+      "en-GB",
+      { month: "long" }
+    )} ${currentDate.getFullYear()}`;
+  };
 
   openBtn.addEventListener("click", () => {
     popup.classList.add("company-values__popup--active");
+    generateDate();
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("company-values__popup--active");
   });
 }
 
