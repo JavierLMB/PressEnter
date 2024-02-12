@@ -15,19 +15,29 @@ function stickyHeader() {
   const body = document.querySelector("body");
   const headerHeight = header.offsetHeight + 300;
   const isHeaderSticky = window.scrollY > headerHeight;
+  const isSmallScreen = window.innerWidth < 1000;
 
   const toggleSticky = () => {
+    header.classList.remove("header-sticky-mobile");
+
+    headerShadow.style.display = isHeaderSticky ? "block" : "none";
+    body.style.marginTop = isHeaderSticky ? "10vh" : "0";
+
     header.classList.toggle("header-sticky", isHeaderSticky);
     setTimeout(() => {
       header.classList.toggle("header-sticky-animation", isHeaderSticky);
     }, 100);
-    headerShadow.style.display = isHeaderSticky ? "block" : "none";
-    body.style.marginTop = isHeaderSticky ? "10vh" : "0";
+  };
+
+  const toggleMobileSticky = () => {
+    header.classList.add("header-sticky-mobile");
   };
 
   const isMobileMenuActive = mobileStickyHeader();
   if (isMobileMenuActive) return;
-  toggleSticky();
+
+  isSmallScreen ? toggleMobileSticky() : toggleSticky();
 }
 
+stickyHeader();
 window.addEventListener("scroll", stickyHeader);
